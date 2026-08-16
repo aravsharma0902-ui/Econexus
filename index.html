@@ -1,0 +1,592 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoNexus AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-icon">🌍</div>
+        <div>
+            <h2>EcoNexus</h2>
+            <span>AI Sustainability</span>
+        </div>
+    </div>
+
+    <nav>
+        <button class="nav-item active" onclick="showPage('dashboard',this)">🏠 <span>Dashboard</span></button>
+        <button class="nav-item" onclick="showPage('water',this)">💧 <span>Water</span></button>
+        <button class="nav-item" onclick="showPage('energy',this)">⚡ <span>Energy</span></button>
+        <button class="nav-item" onclick="showPage('waste',this)">♻️ <span>Waste</span></button>
+        <button class="nav-item" onclick="showPage('analytics',this)">🤖 <span>AI Analytics</span></button>
+        <button class="nav-item" onclick="showPage('predictions',this)">🔮 <span>Predictions</span></button>
+        <button class="nav-item" onclick="showPage('settings',this)">⚙️ <span>Settings</span></button>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="system-online">
+            <span class="online-dot"></span> System Online
+        </div>
+        <small>EcoNexus AI v1.0</small>
+    </div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+    <div>
+        <h1 id="pageTitle">Sustainability Dashboard</h1>
+        <p id="pageSubtitle">Real-time environmental intelligence for your school</p>
+    </div>
+
+    <div class="top-actions">
+        <button class="icon-button" onclick="showNotifications()">🔔</button>
+
+        <div class="profile">
+            <div class="profile-icon">E</div>
+            <div>
+                <strong>Eco Admin</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="dashboard" class="page active-page">
+
+<div class="hero-card">
+
+<div>
+<span class="badge">🤖 AI MONITORING ACTIVE</span>
+
+<h2>Make your school<br><span>smarter & greener.</span></h2>
+
+<p>
+EcoNexus AI monitors water, energy, waste and environmental
+conditions to help build a more sustainable school.
+</p>
+
+<button class="primary-button" onclick="showPage('analytics')">
+View AI Insights →
+</button>
+</div>
+
+<div class="eco-score">
+<div class="score-ring">
+<div class="score-inner">
+<strong>84</strong>
+<span>/100</span>
+</div>
+</div>
+
+<div class="score-label">
+<span class="status-dot"></span> Good
+</div>
+</div>
+
+</div>
+
+
+<div class="section-title">
+<div>
+<h2>Today's Overview</h2>
+<p>Live sustainability indicators</p>
+</div>
+<span class="live-badge">● LIVE</span>
+</div>
+
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon water-icon">💧</div>
+<span class="trend down">↓ 8%</span>
+</div>
+<p>Water Usage</p>
+<h3>420 <small>L</small></h3>
+<div class="mini-bar"><div style="width:58%"></div></div>
+<span class="metric-note">Within target range</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon energy-icon">⚡</div>
+<span class="trend down">↓ 5%</span>
+</div>
+<p>Energy Usage</p>
+<h3>42 <small>kWh</small></h3>
+<div class="mini-bar energy-bar"><div style="width:46%"></div></div>
+<span class="metric-note">Normal consumption</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon waste-icon">♻️</div>
+<span class="trend up">↑ 12%</span>
+</div>
+<p>Waste Managed</p>
+<h3>72 <small>%</small></h3>
+<div class="mini-bar waste-bar"><div style="width:72%"></div></div>
+<span class="metric-note warning-text">Collection soon</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon health-icon">❤️</div>
+<span class="trend good-trend">Good</span>
+</div>
+<p>Environment</p>
+<h3>92 <small>%</small></h3>
+<div class="mini-bar health-bar"><div style="width:92%"></div></div>
+<span class="metric-note">Healthy conditions</span>
+</div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🤖 AI Alert Center</h3>
+<p>Smart recommendations</p>
+</div>
+<span class="alert-count">1 Alert</span>
+</div>
+
+<div class="alert-box danger">
+<div class="alert-icon">💧</div>
+<div>
+<strong>Possible Water Anomaly</strong>
+<p>Water usage in Block B is 18% higher than its normal pattern.</p>
+<button onclick="showPage('water')">Investigate →</button>
+</div>
+</div>
+
+<div class="alert-box warning-box">
+<div class="alert-icon">♻️</div>
+<div>
+<strong>Recyclable Bin Filling Up</strong>
+<p>Current level is 72%. Collection may be needed soon.</p>
+<button onclick="showPage('waste')">View Waste →</button>
+</div>
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🔮 AI Predictions</h3>
+<p>Next 24 hours</p>
+</div>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">♻️</div>
+<div>
+<strong>Recyclable Bin</strong>
+<p>Expected to reach capacity</p>
+</div>
+<span>~4 hrs</span>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">💧</div>
+<div>
+<strong>Water Usage</strong>
+<p>Possible increase during afternoon</p>
+</div>
+<span>72%</span>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">⚡</div>
+<div>
+<strong>Energy</strong>
+<p>Expected to remain normal</p>
+</div>
+<span>Good</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🗑️ Smart Bin Levels</h3>
+<p>Current capacity</p>
+</div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>🟢 Organic</span>
+<strong>45%</strong>
+</div>
+<div class="progress"><div class="organic-progress" style="width:45%"></div></div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>🔵 Recyclable</span>
+<strong>72%</strong>
+</div>
+<div class="progress"><div class="recycle-progress" style="width:72%"></div></div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>⚫ Other</span>
+<strong>30%</strong>
+</div>
+<div class="progress"><div class="other-progress" style="width:30%"></div></div>
+</div>
+
+</div>
+
+
+<div class="panel simulator">
+
+<div class="panel-header">
+<div>
+<h3>🔮 What-If Simulator</h3>
+<p>Test sustainability improvements</p>
+</div>
+</div>
+
+<label>💧 Reduce water usage <strong id="waterValue">20%</strong></label>
+<input type="range" id="waterSlider" min="0" max="50" value="20" oninput="updateSimulator()">
+
+<label>⚡ Reduce energy usage <strong id="energyValue">10%</strong></label>
+<input type="range" id="energySlider" min="0" max="50" value="10" oninput="updateSimulator()">
+
+<label>♻️ Improve waste management <strong id="wasteValue">10%</strong></label>
+<input type="range" id="wasteSlider" min="0" max="50" value="10" oninput="updateSimulator()">
+
+<div class="predicted-score">
+<span>Predicted Eco Score</span>
+<strong id="predictedScore">88</strong>
+<small>/100</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="water" class="page">
+
+<div class="page-heading">
+<h2>💧 Water Intelligence</h2>
+<p>Monitor water usage and detect unusual patterns.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Today's Usage</p>
+<h3>420 <small>L</small></h3>
+<span class="trend down">↓ 8%</span>
+</div>
+
+<div class="metric-card">
+<p>Target Usage</p>
+<h3>450 <small>L</small></h3>
+<span class="metric-note">Within target</span>
+</div>
+
+<div class="metric-card">
+<p>Detected Anomalies</p>
+<h3>1</h3>
+<span class="warning-text">Needs investigation</span>
+</div>
+
+</div>
+
+<div class="panel chart-panel">
+<h3>Water Usage Trend</h3>
+
+<div class="chart">
+<div class="chart-line"></div>
+
+<div class="chart-labels">
+<span>8 AM</span>
+<span>10 AM</span>
+<span>12 PM</span>
+<span>2 PM</span>
+<span>4 PM</span>
+<span>6 PM</span>
+</div>
+</div>
+
+<div class="alert-box danger">
+<div class="alert-icon">🚨</div>
+<div>
+<strong>Possible anomaly detected</strong>
+<p>Block B used approximately 18% more water than expected.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="energy" class="page">
+
+<div class="page-heading">
+<h2>⚡ Energy Intelligence</h2>
+<p>Monitor and optimize school energy consumption.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Today's Usage</p>
+<h3>42 <small>kWh</small></h3>
+<span class="trend down">↓ 5%</span>
+</div>
+
+<div class="metric-card">
+<p>Peak Usage</p>
+<h3>7.2 <small>kWh</small></h3>
+<span class="metric-note">2:00 PM</span>
+</div>
+
+<div class="metric-card">
+<p>Efficiency</p>
+<h3>91%</h3>
+<span class="good-trend">Excellent</span>
+</div>
+
+</div>
+
+<div class="panel chart-panel">
+<h3>Energy Consumption</h3>
+
+<div class="fake-bars">
+<div style="height:40%"></div>
+<div style="height:55%"></div>
+<div style="height:48%"></div>
+<div style="height:70%"></div>
+<div style="height:60%"></div>
+<div style="height:52%"></div>
+<div style="height:45%"></div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="waste" class="page">
+
+<div class="page-heading">
+<h2>♻️ Waste Intelligence</h2>
+<p>AI-powered waste monitoring and management.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Organic</p>
+<h3>45%</h3>
+<span class="metric-note">Normal</span>
+</div>
+
+<div class="metric-card">
+<p>Recyclable</p>
+<h3>72%</h3>
+<span class="warning-text">Collection soon</span>
+</div>
+
+<div class="metric-card">
+<p>Other</p>
+<h3>30%</h3>
+<span class="metric-note">Normal</span>
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🤖 AI Waste Classification</h3>
+<p>Prototype waste recognition system</p>
+</div>
+</div>
+
+<div class="upload-box">
+
+<div class="upload-icon">📷</div>
+<h3>AI Waste Scanner</h3>
+<p>Upload an image of waste to classify it.</p>
+
+<input type="file" id="wasteImage" accept="image/*" onchange="scanWaste()">
+
+<div id="scanResult"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="analytics" class="page">
+
+<div class="page-heading">
+<h2>🤖 AI Analytics</h2>
+<p>Intelligent analysis of sustainability patterns.</p>
+</div>
+
+<div class="ai-grid">
+
+<div class="ai-card good-card">
+<span>⚡</span>
+<h3>Energy Pattern</h3>
+<strong>NORMAL</strong>
+<p>Current consumption is within expected levels.</p>
+</div>
+
+<div class="ai-card alert-card">
+<span>💧</span>
+<h3>Water Pattern</h3>
+<strong>ANOMALY</strong>
+<p>Unusual consumption detected in Block B.</p>
+</div>
+
+<div class="ai-card warning-card">
+<span>♻️</span>
+<h3>Waste Pattern</h3>
+<strong>INCREASING</strong>
+<p>Recyclable waste is increasing.</p>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>💡 AI Recommendation</h3>
+<p class="large-text">
+Investigate water usage in Block B and schedule recyclable waste
+collection before capacity is reached.
+</p>
+</div>
+
+</section>
+
+
+<section id="predictions" class="page">
+
+<div class="page-heading">
+<h2>🔮 AI Predictions</h2>
+<p>Predicted sustainability events.</p>
+</div>
+
+<div class="prediction-list">
+
+<div class="prediction-large">
+<div class="prediction-icon">♻️</div>
+<div>
+<h3>Recyclable Bin</h3>
+<p>May reach full capacity in approximately 4 hours.</p>
+</div>
+<span class="warning-text">HIGH</span>
+</div>
+
+<div class="prediction-large">
+<div class="prediction-icon">💧</div>
+<div>
+<h3>Water Usage</h3>
+<p>Possible increase during afternoon hours.</p>
+</div>
+<span class="warning-text">MEDIUM</span>
+</div>
+
+<div class="prediction-large">
+<div class="prediction-icon">⚡</div>
+<div>
+<h3>Energy</h3>
+<p>Expected to remain within normal range.</p>
+</div>
+<span class="good-trend">LOW</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="settings" class="page">
+
+<div class="page-heading">
+<h2>⚙️ Settings</h2>
+<p>Configure EcoNexus AI.</p>
+</div>
+
+<div class="panel settings-panel">
+
+<label class="setting">
+<span>
+<strong>AI Alerts</strong>
+<small>Receive sustainability alerts</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+<label class="setting">
+<span>
+<strong>Predictions</strong>
+<small>Enable AI predictions</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+<label class="setting">
+<span>
+<strong>Sensor Monitoring</strong>
+<small>Monitor connected sensors</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+</div>
+
+</section>
+
+</main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

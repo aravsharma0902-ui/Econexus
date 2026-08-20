@@ -1,0 +1,931 @@
+<!-- index.html -->
+<!DOCTYPE html>  
+<html lang="en"></html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoNexus AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="auth-screen">
+
+    <div class="auth-card">
+
+        <div class="auth-logo">🌍</div>
+
+        <h1>EcoNexus</h1>
+        <p class="auth-subtitle">AI Sustainability Platform</p>
+
+        <div id="login-form">
+
+            <h2>Welcome Back</h2>
+            <p class="auth-description">Login to your EcoNexus dashboard</p>
+
+            <input id="login-email" type="email" placeholder="Email">
+            <input id="login-password" type="password" placeholder="Password">
+
+            <button class="auth-button" onclick="login()">
+                Login →
+            </button>
+
+            <p class="switch-text">
+                Don't have an account?
+                <button class="switch-button" onclick="showSignup()">Sign Up</button>
+            </p>
+
+        </div>
+
+
+        <div id="signup-form" style="display:none;">
+
+            <h2>Create Account</h2>
+            <p class="auth-description">Start your sustainable journey</p>
+
+            <input id="signup-name" type="text" placeholder="Your Name">
+            <input id="signup-email" type="email" placeholder="Email">
+            <input id="signup-password" type="password" placeholder="Password">
+
+            <button class="auth-button" onclick="signUp()">
+                Create Account →
+            </button>
+
+            <p class="switch-text">
+                Already have an account?
+                <button class="switch-button" onclick="showLogin()">Login</button>
+            </p>
+
+        </div>
+
+        <p id="auth-message"></p>
+
+        <div class="auth-footer">
+            🌱 Monitor. Analyze. Protect.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="app">
+
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-icon">🌍</div>
+        <div>
+            <h2>EcoNexus</h2>
+            <span>AI Sustainability</span>
+        </div>
+    </div>
+
+    <nav>
+        <button class="nav-item active" onclick="showPage('dashboard',this)">🏠 <span>Dashboard</span></button>
+        <button class="nav-item" onclick="showPage('water',this)">💧 <span>Water</span></button>
+        <button class="nav-item" onclick="showPage('energy',this)">⚡ <span>Energy</span></button>
+        <button class="nav-item" onclick="showPage('waste',this)">♻️ <span>Waste</span></button>
+        <button class="nav-item" onclick="showPage('analytics',this)">🤖 <span>AI Analytics</span></button>
+        <button class="nav-item" onclick="showPage('predictions',this)">🔮 <span>Predictions</span></button>
+        <button class="nav-item" onclick="showPage('settings',this)">⚙️ <span>Settings</span></button>
+        <button class="nav-item" onclick="showPage('impact',this)">📊 <span>Impact</span></button>
+        <button class="nav-item" onclick="showPage('ecopoints',this)">🏆 <span>Eco-Points</span></button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="system-online">
+            <span class="online-dot"></span> System Online
+        </div>
+        <small>EcoNexus AI v1.0</small>
+    </div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+    <div>
+        <h1 id="pageTitle">Sustainability Dashboard</h1>
+        <p id="pageSubtitle">Real-time environmental intelligence for your school</p>
+    </div>
+
+    <div class="top-actions">
+        <button class="icon-button" onclick="showNotifications()">🔔</button>
+
+        <div class="profile">
+            <div class="profile-icon">E</div>
+            <div>
+                <strong>Eco Admin</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="dashboard" class="page active-page">
+
+<div class="hero-card">
+
+<div>
+<span class="badge">🤖 AI MONITORING ACTIVE</span>
+
+<h2>Make your school<br><span>smarter & greener.</span></h2>
+
+<p>
+EcoNexus AI monitors water, energy, waste and environmental
+conditions to help build a more sustainable school.
+</p>
+
+<button class="primary-button" onclick="showPage('analytics')">
+View AI Insights →
+</button>
+</div>
+
+<div class="eco-score">
+<div class="score-ring">
+<div class="score-inner">
+<strong>84</strong>
+<span>/100</span>
+</div>
+</div>
+
+<div class="score-label">
+<span class="status-dot"></span> Good
+</div>
+</div>
+
+</div>
+
+
+<div class="section-title">
+<div>
+<h2>Today's Overview</h2>
+<p>Live sustainability indicators</p>
+</div>
+<span class="live-badge">● LIVE</span>
+</div>
+
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon water-icon">💧</div>
+<span class="trend down">↓ 8%</span>
+</div>
+<p>Water Usage</p>
+<h3>420 <small>L</small></h3>
+<div class="mini-bar"><div style="width:58%"></div></div>
+<span class="metric-note">Within target range</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon energy-icon">⚡</div>
+<span class="trend down">↓ 5%</span>
+</div>
+<p>Energy Usage</p>
+<h3>42 <small>kWh</small></h3>
+<div class="mini-bar energy-bar"><div style="width:46%"></div></div>
+<span class="metric-note">Normal consumption</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon waste-icon">♻️</div>
+<span class="trend up">↑ 12%</span>
+</div>
+<p>Waste Managed</p>
+<h3>72 <small>%</small></h3>
+<div class="mini-bar waste-bar"><div style="width:72%"></div></div>
+<span class="metric-note warning-text">Collection soon</span>
+</div>
+
+
+<div class="metric-card">
+<div class="metric-top">
+<div class="metric-icon health-icon">❤️</div>
+<span class="trend good-trend">Good</span>
+</div>
+<p>Environment</p>
+<h3>92 <small>%</small></h3>
+<div class="mini-bar health-bar"><div style="width:92%"></div></div>
+<span class="metric-note">Healthy conditions</span>
+</div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🤖 AI Alert Center</h3>
+<p>Smart recommendations</p>
+</div>
+<span class="alert-count">1 Alert</span>
+</div>
+
+<div class="alert-box danger">
+<div class="alert-icon">💧</div>
+<div>
+<strong>Possible Water Anomaly</strong>
+<p>Water usage in Block B is 18% higher than its normal pattern.</p>
+<button onclick="showPage('water')">Investigate →</button>
+</div>
+</div>
+
+<div class="alert-box warning-box">
+<div class="alert-icon">♻️</div>
+<div>
+<strong>Recyclable Bin Filling Up</strong>
+<p>Current level is 72%. Collection may be needed soon.</p>
+<button onclick="showPage('waste')">View Waste →</button>
+</div>
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🔮 AI Predictions</h3>
+<p>Next 24 hours</p>
+</div>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">♻️</div>
+<div>
+<strong>Recyclable Bin</strong>
+<p>Expected to reach capacity</p>
+</div>
+<span>~4 hrs</span>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">💧</div>
+<div>
+<strong>Water Usage</strong>
+<p>Possible increase during afternoon</p>
+</div>
+<span>72%</span>
+</div>
+
+<div class="prediction">
+<div class="prediction-icon">⚡</div>
+<div>
+<strong>Energy</strong>
+<p>Expected to remain normal</p>
+</div>
+<span>Good</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🗑️ Smart Bin Levels</h3>
+<p>Current capacity</p>
+</div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>🟢 Organic</span>
+<strong>45%</strong>
+</div>
+<div class="progress"><div class="organic-progress" style="width:45%"></div></div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>🔵 Recyclable</span>
+<strong>72%</strong>
+</div>
+<div class="progress"><div class="recycle-progress" style="width:72%"></div></div>
+</div>
+
+<div class="bin">
+<div class="bin-label">
+<span>⚫ Other</span>
+<strong>30%</strong>
+</div>
+<div class="progress"><div class="other-progress" style="width:30%"></div></div>
+</div>
+
+</div>
+
+
+<div class="panel simulator">
+
+<div class="panel-header">
+<div>
+<h3>🔮 What-If Simulator</h3>
+<p>Test sustainability improvements</p>
+</div>
+</div>
+
+<label>💧 Reduce water usage <strong id="waterValue">20%</strong></label>
+<input type="range" id="waterSlider" min="0" max="50" value="20" oninput="updateSimulator()">
+
+<label>⚡ Reduce energy usage <strong id="energyValue">10%</strong></label>
+<input type="range" id="energySlider" min="0" max="50" value="10" oninput="updateSimulator()">
+
+<label>♻️ Improve waste management <strong id="wasteValue">10%</strong></label>
+<input type="range" id="wasteSlider" min="0" max="50" value="10" oninput="updateSimulator()">
+
+<div class="predicted-score">
+<span>Predicted Eco Score</span>
+<strong id="predictedScore">88</strong>
+<small>/100</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="ecopoints" class="page">
+
+  <div class="page-heading">
+    <h2>🏆 Eco-Points Economy</h2>
+    <p>Class Gamification system powered by EcoNexus AI</p>
+  </div>
+
+  <!-- How it works -->
+  <div class="panel" style="margin-bottom: 24px;">
+    <h3>How Eco-Points Work</h3>
+    <p style="margin-top: 8px; color: #4b5563;">
+      Students and classes earn Eco-Points for real sustainability actions. 
+      Points are awarded automatically from EcoNexus sensors + AI Waste Scanner, 
+      and manually by teachers for challenges and good behaviour.
+    </p>
+  </div>
+
+  <!-- Points Table -->
+  <div class="panel" style="margin-bottom: 24px;">
+    <h3>Points Structure</h3>
+    <div style="overflow-x: auto; margin-top: 12px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="background: #f1f5f9; text-align: left;">
+            <th style="padding: 10px; border-bottom: 1px solid #e2e8f0;">Action</th>
+            <th style="padding: 10px; border-bottom: 1px solid #e2e8f0;">Points</th>
+            <th style="padding: 10px; border-bottom: 1px solid #e2e8f0;">Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">Proper waste sorting (AI Scanner)</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><strong>5–15</strong></td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">AI + Teacher</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">Reducing water / energy use</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><strong>10–30</strong></td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">EcoNexus Sensors</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">Reporting & fixing anomalies</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><strong>15–40</strong></td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">Photo + Admin</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">Completing weekly Eco Challenge</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><strong>20–50</strong></td>
+            <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;">AI Coach + Evidence</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px;">Zero-waste day / special challenges</td>
+            <td style="padding: 10px;"><strong>50–100</strong></td>
+            <td style="padding: 10px;">Class verification</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="panel" style="margin-bottom: 24px;">
+    <h3>Class Leaderboard (This Week)</h3>
+    <div style="margin-top: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 20px;">🥇</span>
+          <div>
+            <strong>Class 8-A</strong>
+            <div style="font-size: 13px; color: #6b7280;">Water Warrior + Waste Wizard</div>
+          </div>
+        </div>
+        <strong style="color: #059669;">1,280 pts</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 20px;">🥈</span>
+          <div>
+            <strong>Class 9-B</strong>
+            <div style="font-size: 13px; color: #6b7280;">Energy Savers</div>
+          </div>
+        </div>
+        <strong style="color: #059669;">1,145 pts</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 20px;">🥉</span>
+          <div>
+            <strong>Class 7-C</strong>
+            <div style="font-size: 13px; color: #6b7280;">Anomaly Hunters</div>
+          </div>
+        </div>
+        <strong style="color: #059669;">980 pts</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 18px; color: #9ca3af;">4</span>
+          <div>
+            <strong>Class 10-A</strong>
+          </div>
+        </div>
+        <strong style="color: #6b7280;">875 pts</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="panel" style="margin-bottom: 24px;">
+    <h3>Badges & Levels</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 16px;">
+      <div style="text-align: center; background: #f8fafc; padding: 14px; border-radius: 12px;">
+        <div style="font-size: 28px;">💧</div>
+        <strong style="font-size: 13px;">Water Warrior</strong>
+      </div>
+      <div style="text-align: center; background: #f8fafc; padding: 14px; border-radius: 12px;">
+        <div style="font-size: 28px;">⚡</div>
+        <strong style="font-size: 13px;">Energy Saver</strong>
+      </div>
+      <div style="text-align: center; background: #f8fafc; padding: 14px; border-radius: 12px;">
+        <div style="font-size: 28px;">♻️</div>
+        <strong style="font-size: 13px;">Waste Wizard</strong>
+      </div>
+      <div style="text-align: center; background: #f8fafc; padding: 14px; border-radius: 12px;">
+        <div style="font-size: 28px;">🔍</div>
+        <strong style="font-size: 13px;">Anomaly Hunter</strong>
+      </div>
+      <div style="text-align: center; background: #f8fafc; padding: 14px; border-radius: 12px;">
+        <div style="font-size: 28px;">🌳</div>
+        <strong style="font-size: 13px;">Forest Guardian</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Connection to EcoNexus -->
+  <div class="panel" style="background: #0f172a; color: white;">
+    <h3 style="color: white;">Powered by EcoNexus AI</h3>
+    <p style="margin-top: 8px; color: #cbd5e1; font-size: 14px;">
+      Points are automatically generated from real data:
+    </p>
+    <ul style="margin-top: 10px; color: #94a3b8; font-size: 14px; padding-left: 18px;">
+      <li>Water & Energy sensor improvements → automatic points</li>
+      <li>AI Waste Scanner correct classifications → points</li>
+      <li>Anomaly detection + resolution → bonus points</li>
+      <li>What-If Simulator challenges → weekly Eco Challenges</li>
+    </ul>
+  </div>
+
+</section>
+<section id="impact" class="page">
+
+  <div class="page-heading">
+    <h2>📊 Impact vs After</h2>
+    <p>Clear difference EcoNexus makes on Water, Energy & AI decisions</p>
+  </div>
+
+  <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+    <!-- WATER -->
+    <div class="panel" style="padding: 0; overflow: hidden;">
+      <div style="background: #2563eb; color: white; padding: 12px 16px; font-weight: 600;">
+        💧 Water Intelligence
+      </div>
+      <div style="padding: 16px;">
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 12px; margin-bottom: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #dc2626; margin-bottom: 6px;">BEFORE</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>No real-time monitoring</li>
+            <li>Leaks go unnoticed for days</li>
+            <li>Only monthly readings</li>
+            <li>Typical: ~520–550 L/day</li>
+          </ul>
+        </div>
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px; padding: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #059669; margin-bottom: 6px;">AFTER ECONEXUS</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>Live monitoring + AI alerts</li>
+            <li>Instant anomaly detection</li>
+            <li>Daily target tracking</li>
+            <li>Today: <strong>420 L</strong> ↓ 8–20%</li>
+          </ul>
+        </div>
+        <div style="text-align: center; margin-top: 14px;">
+          <div style="font-size: 22px; font-weight: 700; color: #2563eb;">15–25%</div>
+          <div style="font-size: 12px; color: #6b7280;">Potential Water Savings</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENERGY -->
+    <div class="panel" style="padding: 0; overflow: hidden;">
+      <div style="background: #d97706; color: white; padding: 12px 16px; font-weight: 600;">
+        ⚡ Energy Intelligence
+      </div>
+      <div style="padding: 16px;">
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 12px; margin-bottom: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #dc2626; margin-bottom: 6px;">BEFORE</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>No visibility of peak load</li>
+            <li>Lights/fans left on after class</li>
+            <li>Only monthly electricity bill</li>
+            <li>Typical: ~50–55 kWh/day</li>
+          </ul>
+        </div>
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px; padding: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #059669; margin-bottom: 6px;">AFTER ECONEXUS</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>Real-time + peak detection</li>
+            <li>Efficiency score (91%)</li>
+            <li>AI pattern recognition</li>
+            <li>Today: <strong>42 kWh</strong> ↓ 5–15%</li>
+          </ul>
+        </div>
+        <div style="text-align: center; margin-top: 14px;">
+          <div style="font-size: 22px; font-weight: 700; color: #d97706;">10–20%</div>
+          <div style="font-size: 12px; color: #6b7280;">Potential Energy Savings</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI ANALYTICS -->
+    <div class="panel" style="padding: 0; overflow: hidden;">
+      <div style="background: #7c3aed; color: white; padding: 12px 16px; font-weight: 600;">
+        🤖 AI Analytics
+      </div>
+      <div style="padding: 16px;">
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 12px; margin-bottom: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #dc2626; margin-bottom: 6px;">BEFORE</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>Reactive / manual decisions</li>
+            <li>No predictions or warnings</li>
+            <li>Hard to find root causes</li>
+            <li>Eco Score unknown</li>
+          </ul>
+        </div>
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px; padding: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: #059669; margin-bottom: 6px;">AFTER ECONEXUS</div>
+          <ul style="font-size: 13px; color: #374151; padding-left: 16px; margin: 0;">
+            <li>Real-time alerts + recommendations</li>
+            <li>24-hour AI predictions</li>
+            <li>What-If Simulator</li>
+            <li>Eco Score: <strong>84 → 88+</strong></li>
+          </ul>
+        </div>
+        <div style="text-align: center; margin-top: 14px;">
+          <div style="font-size: 22px; font-weight: 700; color: #7c3aed;">Proactive</div>
+          <div style="font-size: 12px; color: #6b7280;">Reactive → Predictive</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Summary -->
+  <div class="panel" style="margin-top: 24px; background: #1e293b; color: white;">
+    <h3 style="margin-bottom: 16px; text-align: center;">Projected Monthly Impact (Mid-size School)</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; text-align: center;">
+      <div>
+        <div style="font-size: 22px; font-weight: 700; color: #93c5fd;">2,500–4,000+</div>
+        <div style="font-size: 12px; color: #94a3b8;">Litres Water Saved</div>
+      </div>
+      <div>
+        <div style="font-size: 22px; font-weight: 700; color: #fcd34d;">150–300</div>
+        <div style="font-size: 12px; color: #94a3b8;">kWh Energy Saved</div>
+      </div>
+      <div>
+        <div style="font-size: 22px; font-weight: 700; color: #6ee7b7;">₹2,500–5,000+</div>
+        <div style="font-size: 12px; color: #94a3b8;">Estimated Cost Saving</div>
+      </div>
+      <div>
+        <div style="font-size: 22px; font-weight: 700; color: #c4b5fd;">84 → 88+</div>
+        <div style="font-size: 12px; color: #94a3b8;">Eco Score Improvement</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section id="water" class="page">
+
+<div class="page-heading">
+<h2>💧 Water Intelligence</h2>
+<p>Monitor water usage and detect unusual patterns.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Today's Usage</p>
+<h3>420 <small>L</small></h3>
+<span class="trend down">↓ 8%</span>
+</div>
+
+<div class="metric-card">
+<p>Target Usage</p>
+<h3>450 <small>L</small></h3>
+<span class="metric-note">Within target</span>
+</div>
+
+<div class="metric-card">
+<p>Detected Anomalies</p>
+<h3>1</h3>
+<span class="warning-text">Needs investigation</span>
+</div>
+
+</div>
+
+<div class="panel chart-panel">
+<h3>Water Usage Trend</h3>
+
+<div class="chart">
+<div class="chart-line"></div>
+
+<div class="chart-labels">
+<span>8 AM</span>
+<span>10 AM</span>
+<span>12 PM</span>
+<span>2 PM</span>
+<span>4 PM</span>
+<span>6 PM</span>
+</div>
+</div>
+
+<div class="alert-box danger">
+<div class="alert-icon">🚨</div>
+<div>
+<strong>Possible anomaly detected</strong>
+<p>Block B used approximately 18% more water than expected.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="energy" class="page">
+
+<div class="page-heading">
+<h2>⚡ Energy Intelligence</h2>
+<p>Monitor and optimize school energy consumption.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Today's Usage</p>
+<h3>42 <small>kWh</small></h3>
+<span class="trend down">↓ 5%</span>
+</div>
+
+<div class="metric-card">
+<p>Peak Usage</p>
+<h3>7.2 <small>kWh</small></h3>
+<span class="metric-note">2:00 PM</span>
+</div>
+
+<div class="metric-card">
+<p>Efficiency</p>
+<h3>91%</h3>
+<span class="good-trend">Excellent</span>
+</div>
+
+</div>
+
+<div class="panel chart-panel">
+<h3>Energy Consumption</h3>
+
+<div class="fake-bars">
+<div style="height:40%"></div>
+<div style="height:55%"></div>
+<div style="height:48%"></div>
+<div style="height:70%"></div>
+<div style="height:60%"></div>
+<div style="height:52%"></div>
+<div style="height:45%"></div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="waste" class="page">
+
+<div class="page-heading">
+<h2>♻️ Waste Intelligence</h2>
+<p>AI-powered waste monitoring and management.</p>
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Organic</p>
+<h3>45%</h3>
+<span class="metric-note">Normal</span>
+</div>
+
+<div class="metric-card">
+<p>Recyclable</p>
+<h3>72%</h3>
+<span class="warning-text">Collection soon</span>
+</div>
+
+<div class="metric-card">
+<p>Other</p>
+<h3>30%</h3>
+<span class="metric-note">Normal</span>
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h3>🤖 AI Waste Classification</h3>
+<p>Prototype waste recognition system</p>
+</div>
+</div>
+
+<div class="upload-box">
+
+<div class="upload-icon">📷</div>
+<h3>AI Waste Scanner</h3>
+<p>Upload an image of waste to classify it.</p>
+
+<input type="file" id="wasteImage" accept="image/*" onchange="scanWaste()">
+
+<div id="scanResult"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="analytics" class="page">
+
+<div class="page-heading">
+<h2>🤖 AI Analytics</h2>
+<p>Intelligent analysis of sustainability patterns.</p>
+</div>
+
+<div class="ai-grid">
+
+<div class="ai-card good-card">
+<span>⚡</span>
+<h3>Energy Pattern</h3>
+<strong>NORMAL</strong>
+<p>Current consumption is within expected levels.</p>
+</div>
+
+<div class="ai-card alert-card">
+<span>💧</span>
+<h3>Water Pattern</h3>
+<strong>ANOMALY</strong>
+<p>Unusual consumption detected in Block B.</p>
+</div>
+
+<div class="ai-card warning-card">
+<span>♻️</span>
+<h3>Waste Pattern</h3>
+<strong>INCREASING</strong>
+<p>Recyclable waste is increasing.</p>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>💡 AI Recommendation</h3>
+<p class="large-text">
+Investigate water usage in Block B and schedule recyclable waste
+collection before capacity is reached.
+</p>
+</div>
+
+</section>
+
+
+<section id="predictions" class="page">
+
+<div class="page-heading">
+<h2>🔮 AI Predictions</h2>
+<p>Predicted sustainability events.</p>
+</div>
+
+<div class="prediction-list">
+
+<div class="prediction-large">
+<div class="prediction-icon">♻️</div>
+<div>
+<h3>Recyclable Bin</h3>
+<p>May reach full capacity in approximately 4 hours.</p>
+</div>
+<span class="warning-text">HIGH</span>
+</div>
+
+<div class="prediction-large">
+<div class="prediction-icon">💧</div>
+<div>
+<h3>Water Usage</h3>
+<p>Possible increase during afternoon hours.</p>
+</div>
+<span class="warning-text">MEDIUM</span>
+</div>
+
+<div class="prediction-large">
+<div class="prediction-icon">⚡</div>
+<div>
+<h3>Energy</h3>
+<p>Expected to remain within normal range.</p>
+</div>
+<span class="good-trend">LOW</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="settings" class="page">
+
+<div class="page-heading">
+<h2>⚙️ Settings</h2>
+<p>Configure EcoNexus AI.</p>
+</div>
+
+<div class="panel settings-panel">
+
+<label class="setting">
+<span>
+<strong>AI Alerts</strong>
+<small>Receive sustainability alerts</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+<label class="setting">
+<span>
+<strong>Predictions</strong>
+<small>Enable AI predictions</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+<label class="setting">
+<span>
+<strong>Sensor Monitoring</strong>
+<small>Monitor connected sensors</small>
+</span>
+<input type="checkbox" checked>
+</label>
+
+</div>
+
+</section>
+
+</main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
